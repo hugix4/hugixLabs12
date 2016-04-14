@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link href="Favicon.ico" type="image/x-icon" rel="shortcut icon" />
+ <!--[if lt IE 9]> 
+<script type="text/javascript"> 
+   document.createElement("nav"); 
+   document.createElement("header"); 
+   document.createElement("footer"); 
+   document.createElement("section"); 
+   document.createElement("article"); 
+   document.createElement("aside"); 
+   document.createElement("hgroup"); 
+</script> 
+<![endif]-->
+	<meta charset="utf-8" />
+	<title>CGL Inscripci&oacute;n al 3er Concurso &quot;Let's Go To San Antonio 2012&quot;</title>
+	<script language="javascript" type="text/javascript">
+
+function vacio(cadena)
+  {                                    // DECLARACION DE CONSTANTES
+    var blanco = " \n\t" + String.fromCharCode(13); // blancos
+                                       // DECLARACION DE VARIABLES
+    var i;                             // indice en cadena
+    var es_vacio;                      // cadena es vacio o no
+    for(i = 0, es_vacio = true; (i < cadena.length) && es_vacio; i++) // INICIO
+      es_vacio = blanco.indexOf(cadena.charAt(i)) != - 1;
+    return(es_vacio);
+  }
+
+function comprobarRadio(radio)
+{
+  for(i = 0;i < radio.length;i++)
+  {
+    if(radio[i].checked)
+    {
+      return true;
+	  alert('Si esta checado');
+    }
+  }
+  return false;
+  alert('No checado');
+  radio.focus();
+}
+
+function validaMail(mail) {  
+    var RegExPattern = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;  
+    var errorMessage = 'Mail Incorrecto';  
+    if ((mail.value.match(RegExPattern)) && (mail.value!='')) {  
+        //alert('Mail Valido');
+    } else {  
+        alert(errorMessage);  
+        mail.focus();  
+    }   
+}
+
+function vCuenta(Cuenta){
+	var PatronCuenta= /[0-9]{9}/;
+	var MensajeError='Numero de cuenta no valido';
+	if ((Cuenta.value.match(PatronCuenta)) && (Cuenta.value!='')) {  
+        //alert('Numero de cuenta valido');
+    } else {  
+        alert(MensajeError);  
+        Cuenta.focus();  
+    }
+}    
+
+function vGrupo(Grupo){
+	var PatronGrupo= /[0-9]{3}/;//Vale la pena delimitar los grupos, que no excedan de 600??
+	var MensajeError='Grupo no valido';
+	if ((Grupo.value.match(PatronGrupo)) && (Grupo.value!='')) {  
+        //alert('Grupo valido');
+    } else {  
+        alert(MensajeError);  
+        Grupo.focus();  
+    }
+}    
+
+
+function ValidaCampos(form)
+  {
+   if(vacio(formOne.Nombre.value) || vacio(formOne.ApPat.value)){
+      alert("Revisa nuevamente tus datos");
+	  return false;
+	}
+	else{
+	alert("Datos generales ok");
+	return true;
+	}
+    //else if(!comprobarRadio(form.1))
+    //alert("Faltan preguntas =S ");  
+  }
+</script>
+	
+	<link rel="stylesheet" href="Pqt/hugixSan2012.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="print.css" media="print" />	
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29086809-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<form name="formOne" action="apgSan2012.php" method="post" onSubmit="return ValidaCampos(this)">
+<div id="wrapper"><!-- Aquí se envuelve todo el contenido de la página -->
+	<header>
+		<img src="Pqt/HeaderUno.png" width="940" height="85" alt=""><!-- header image -->
+	</header>
+	
+	<nav><!-- menu superior y supremo -->
+		<div class="menu">
+			<ul>
+				<li><p id='titulo'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscripci&oacute;n al 3er Concurso &quot;Let's Go To San Antonio 2012&quot;</></li>
+			</ul>
+		</div>
+		
+	</nav><!-- fin del menu supremo -->	
+	<section id="main"><!-- contenido principal y menus laterales -->		
+			<section id="content"><!-- Este es el contenido principal -->			
+        		<article>
+				<div>
+			<div align='center'>
+			</br>Apellido paterno*:&nbsp;<input id="ApPat" type="text" name="ApPat" value=""/>&nbsp;&nbsp; Apellido materno:&nbsp;<input id="ApMat" type="text" name="ApMat" value=""/>&nbsp;&nbsp;Nombre(s)*:&nbsp;<input id="Nombre" type="text" name="Nombre" value=""/> 
+			</br>
+			</br>N&uacute;mero de cuenta*:&nbsp;<input id="Cuenta" type="text" name="Cuenta" value="" onblur='vCuenta(this)'/>
+			</br>
+			</br>Nombre del profesor:&nbsp;<input id="Profesor" type="text" name="Profesor" value=""/>
+			</br>
+			</br><b>Escuela*:&nbsp;&nbsp;&nbsp;&nbsp;</b><INPUT id="Escuela" type="radio" name="Escuela" value="CCH" onclick="comprobarRadio(this)">Colegio de Ciencias y Humanidades&nbsp;&nbsp;&nbsp;<INPUT id="Escuela" type="radio" name="Escuela" value="ENP" onclick="comprobarRadio(this)" >Escuela Nacional Preparatoria &nbsp;&nbsp;			
+			</br>			
+			</br>&nbsp;Plantel*:&nbsp;<select id="NombrePlantel" type="text" name="NombrePlantel" value=""/>
+			<option value='Azcapotzalco'>CCH Azcapotzalco
+			<option value='Naucalpan'>CCH Naucalpan
+			<option value='Oriente'>CCH Oriente
+			<option value='Sur'>CCH Sur
+			<option value='Vallejo'>CCH Vallejo
+			<option value='1'>ENP 1
+			<option value='2'>ENP 2
+			<option value='3'>ENP 3
+			<option value='4'>ENP 4
+			<option value='5'>ENP 5
+			<option value='6'>ENP 6
+			<option value='7'>ENP 7
+			<option value='8'>ENP 8
+			<option value='9'>ENP 9
+			</select>&nbsp;&nbsp;&nbsp;Turno*:&nbsp;<select id="Turno" type="text" name="Turno" value=""/>			
+			<option value='Matutino'>Matutino
+			<option value='Vespertino'>Vespertino
+			</select>
+			</br>
+			</br>&nbsp;Grupo:&nbsp;<input id="Grupo" type="text" name="Grupo" value="" onblur="vGrupo(this)"/>&nbsp;&nbsp;&nbsp;Secci&oacute;n:&nbsp;<select id="Seccion" type="text" name="Seccion" value=""/>
+			<option value='-'>Sin secci&oacute;n
+			<option value='A'>A
+			<option value='B'>B
+			</select>
+			</br>			
+			</br>&nbsp;Tel&eacute;fono celular*:&nbsp;<input id="Celular" type="text" name="Celular" value=""/>&nbsp;&nbsp;&nbsp;Tel&eacute;fono casa:&nbsp;<input id="Casa" type="text" name="Casa" value=""/>&nbsp;&nbsp;&nbsp;Otro tel&eacute;fono de contacto:&nbsp;<input id="Otro" type="text" name="Otro" value=""/>
+			</br>
+			</br>&nbsp;email*:&nbsp;<input id="Email" type="text" name="Email" value="" onblur="validaMail(this)"/> &nbsp;email alterno:&nbsp;<input id="Email2" type="text" name="Email2" value="" onblur="validaMail(this);"/>
+			</br>
+			</br>
+			&nbsp;<input type="submit" name="submit" value="Validar" /> <input type="reset" value="Borrar" name="B2"></p>
+			
+				<b><a href="Pqt/PERMISOcch2012.pdf">Formato permiso CCH</a> </b></br>
+				<b><a href="Pqt/PERMISOenp2012.pdf">Formato permiso ENP</a></b>
+
+			
+			
+			</div>
+		<!--<div id="fondo"/>-->	
+	</div>						
+					
+					<!--<p align='center'><blink>Actualizaci&oacute;n: Debido a la carga de consultas, nuestro servidor esta abajo,</br> en unos momentos estar&aacute; listo. Disculpen las molestias.</blink></p>-->
+				</article>
+						</br></br>
+			</section><!-- Aquí termina el contenido principal de la página -->		
+	</section><!-- Este es el fin tanto de las barras laterales como de el contenido-->	
+	<footer>
+		<section id="footer-area">
+			<section id="footer-outer-block">				
+					<p id='letrita'>									
+						&copy;D.R. Universidad Nacional Aut&oacute;noma de M&eacute;xico 2011.<strong>Coordinaci&oacute;n General de Lenguas</strong>, Calle Agua #130, Jardines del Pedregal,
+						Alvaro Obreg&oacute;n, M&eacute;xico D. F. CP 01090. Tel. 15 20 00 00  Extensiones: 102 y 103 Hecho en M&eacute;xico.
+						Prohibida su reproducci&oacute;n parcial o total para fines de lucro.</br>&oslash;Hugix</p>					
+			</section><!-- Aqui se termina el footer editable -->
+		</section><!-- Fin del espacio del footer -->
+	</footer>	
+</div><!-- Fin de la "envoltura" -->
+<!--Que no le digan y que no le cuenten, toda esta página fue diseñada en su totalidad por el Ingeniero Hugo Luna alias hugix-->
+</form>
+</body>
+</html>
